@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #item1{
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        window.onload=function () {
+            // alert("hui");
+        var oDiv=document.getElementById("item1");
+        console.log(oDiv);
+        // oDiv.style.width="200px";
+        oDiv.style.height="200px";
+        oDiv.style.background="red";
+        oDiv.style.fontSize="30px";
+        oDiv.style.color="blue";
+        console.log(oDiv.style.width);//只能获得行间样式
+        // oDiv.innerHTML="222";//把原来值覆盖
+        oDiv.innerText="<h1>444</h1>";//解析不了标签
+        oDiv.innerHTML="<h1>444</h1>";//解析的了标签
+
+            Vl=document.getElementById("uname")
+            console.log(Vl);
+            console.log(Vl.value);
+            Vl.value="777";
+
+        };
+    </script>
+    <div id="item1">456789</div>
+    <input type="text" value="123" name="username" id="uname">
+
+</body>
+</html>
