@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>进度条</title>
+    <style>
+        #out{
+            width: 400px;
+            height: 40px;
+            border: 1px red solid;
+            margin:200px auto;
+        }
+        #ins{
+            background: green;
+            width: 0px;
+            height: 40px;
+            border: 1px red solid;
+            /*margin:200px auto;*/
+            text-align: right;
+            line-height: 40px;
+         }
+    </style>
+</head>
+<body>
+        <script>
+            window.onload=function () {
+              var out = document.getElementById("out");
+              var ins = document.getElementById("ins");
+
+              var step = 1;
+            }
+        </script>
+        <!--外管道-->
+        <div id="out">
+            <!--内管道-->
+            <div id="ins"></div>
+        </div>
+</body>
+</html>

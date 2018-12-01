@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js练习</title>
+
+</head>
+<body>
+    <script>
+        // 生成10以内的随机整数
+        function randonint() {
+            var num = Math.ceil(Math.random()*10);
+            console.log(num);
+        }
+        // 生成指定范围的整数
+        function randint(start,end){
+            var num = Math.floor(Math.random()*(end-start))+start;
+            console.log(num);
+
+        }
+        randonint();
+        randint(11,13);
+        // 用js实现一个九九乘法表
+       function cfb() {
+            var str='';
+           for(var i=1;i<=9;i++)
+           {
+               for(var j=1;j<=i;j++)
+               {
+                  str += j+"*"+i+' ';
+               }
+               str+='\n';
+           }
+           console.log(str);
+       }
+       cfb();
+    </script>
+
+</body>
+</html>
