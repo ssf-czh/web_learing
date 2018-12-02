@@ -14,7 +14,7 @@
             background: green;
             width: 0px;
             height: 40px;
-            border: 1px red solid;
+            /*border: 1px red solid;*/
             /*margin:200px auto;*/
             text-align: right;
             line-height: 40px;
@@ -26,8 +26,19 @@
             window.onload=function () {
               var out = document.getElementById("out");
               var ins = document.getElementById("ins");
-
               var step = 1;
+              var set = setInterval(function(){
+                  //注意 xx.style.width 放回带单位的"100px" offsetwidth 不带单位 100
+                  var w = ins.offsetWidth;
+                  if(w > out.offsetWidth)
+                  {
+                      clearInterval(set);
+                  }
+                  var nw = w + step;
+                  var bai = w / out.offsetWidth;
+                  ins.innerHTML = Math.floor(bai * 100) +"%";
+                  ins.style.width = nw + "px";
+              },50)
             }
         </script>
         <!--外管道-->
