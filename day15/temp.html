@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-1.8.3.min.js"></script>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        .wrap{
+            width: 800px;
+            height: 600px;
+            border:1px solid red;
+        }
+        .item1{
+            width: 200px;
+            height: 200px;
+            background: pink;
+            border-radius: 50%;
+            float: left;
+        }
+        .in{
+            height: 100px;
+            width: 100px;
+            background: yellow;
+        }
+        .in2{
+            height: 100px;
+            width: 100px;
+            background: green;
+        }
+    </style>
+</head>
+<body>
+    <button>append()</button>
+    <button>appendTo()</button>
+    <div class="wrap">
+        <!--<div class="in"></div>-->
+        <!--<div class="in2"></div>-->
+    </div>
+    <script>
+        $("button").eq(0).click(function(){
+
+            var odiv = creatdiv();
+            // console.log(111);
+            $(".wrap").before(odiv);
+        });
+        function rand(m,n){
+            return Math.floor(Math.random()*(n-m+1))+m;
+        }
+        function creatdiv(){
+             var odiv =$("<div class='item1'></div>");
+            odiv.css({"background":"rgb("+rand(0,255)+","+rand(0,255)+","+rand(0,255)+")"});
+            return odiv;
+        }
+    </script>
+</body>
+</html>
