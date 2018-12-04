@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-1.8.3.min.js"></script>
+</head>
+<body>
+    <button>$.get</button>
+    <button>$.post</button>
+    <button>$.ajax</button>
+    <script>
+        $("button").eq(0).click(function () {
+           $.get("./cgi-bin/1.py",{username:"zhangsan",age:18},function (date) {
+               console.log(date);
+           },"json");
+        });
+        $("button").eq(1).click(function () {
+            $.post("./cgi-bin/1.py",{username:"lisi",age:28},function (data) {
+                console.log(data);
+            },"json");
+        });
+        // $('button').eq(1).click(function(){
+		// 	$.post('./cgi-bin/1.py',{username:'lisi',age:28},function(data){
+		// 		console.log(data);
+		// 	});
+		// });
+        $("button").eq(2).click(function () {
+           $.ajax({
+               url:"./cgi-bin/1.py",
+               type:"get",
+               data:{username:"wangwu",age:60},
+               dataType:"json",
+               success:function (da) {
+                 console.log(da);
+               },
+               error:function () {
+                   console.log("请求失败");
+               },
+                timeout:2000,
+               async:true,
+           })
+        });
+
+    </script>
+</body>
+</html>
